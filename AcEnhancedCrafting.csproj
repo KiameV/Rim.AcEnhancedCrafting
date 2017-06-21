@@ -51,6 +51,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="UnityEngine">
       <HintPath>D:\Steam\steamapps\common\RimWorld\RimWorldWin_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
@@ -79,7 +81,9 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(ProjectDir)..\About\*.*" "$(OutDir)..\About" /Y /I /E
+    <PostBuildEvent>xcopy "$(ProjectDir)..\About\About.xml" "$(OutDir)..\About\" /Y /I
+xcopy "$(ProjectDir)..\About\Preview.png" "$(OutDir)..\About\" /Y /I
+xcopy "$(ProjectDir)..\About\PublishedFileId.txt" "$(OutDir)..\About\" /Y /I
 xcopy "$(ProjectDir)..\Languages\*.*" "$(OutDir)..\Languages" /Y /I /E
 xcopy "$(ProjectDir)..\Textures\*.*" "$(OutDir)..\Textures" /Y /I /E</PostBuildEvent>
   </PropertyGroup>
